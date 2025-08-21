@@ -21,6 +21,9 @@ phases:
       - docker push ${ECR_IMAGE_URI}
 
       - printf '[{"name":"cth1-container","imageUri":"%s"}]' ${ECR_IMAGE_URI} > imagedefinitions.json
+      - echo "imagedefinitions.json created:"
+      - cat imagedefinitions.json
+      - ls -la imagedefinitions.json
 
 artifacts:
   files:
