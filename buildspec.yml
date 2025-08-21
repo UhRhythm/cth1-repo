@@ -20,7 +20,7 @@ phases:
       - docker tag ${ECR_REPO_NAME}:latest ${ECR_IMAGE_URI}
       - docker push ${ECR_IMAGE_URI}
 
-      - printf '[{"name":"cth1-container","imageUri":"135424146661.dkr.ecr.ap-northeast-1.amazonaws.com/cth1-repo:latest"}]' ${ECR_IMAGE_URI} > imagedefinitions.json
+      - printf '[{"name":"cth1-container","imageUri":"%s"]' ${ECR_IMAGE_URI} > imagedefinitions.json
       - echo "imagedefinitions.json created?:"
       - cat imagedefinitions.json
       - ls -la imagedefinitions.json
